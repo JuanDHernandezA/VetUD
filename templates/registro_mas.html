@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>VetUD</title>
+  <!--<link rel="stylesheet" type="text/css" href='{% static "app/styleboostrap.css" %}'>-->
+  <!--<link rel="stylesheet" type="text/css" href='{% static "app/style.css" %}'>-->
+  <link href='{% static "app/styleboostrap.css" %}' rel="stylesheet">
+  <link href='{% static "app/style.css" %}' rel="stylesheet">
+</head>
+
+<!--{% static "app/styleboostrap.css" %}-->
+<!--{% static "app/style.css" %}-->
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Navbar Start -->
+      <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+          <a href="" class="navbar-brand d-block d-lg-none">
+            <h1 class="m-0 display-5 text-capitalize text-white"><span class="text-primary">Vet</span>UD</h1>
+          </a>
+          <div class="col-lg-2">
+            <a href="" class="navbar-brand d-none d-lg-block">
+              <h1 class="m-0 display-5 text-capitalize text-white"><span class="text-primary">Vet</span>UD</h1>
+            </a>
+          </div>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-between px-3 " id="navbarCollapse">
+            <div class="navbar-nav mr-auto py-0">
+              <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+            </div>
+
+          </div>
+        </nav>
+      </div>
+      <!-- Navbar End -->
+
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+          <div class="registro_mascota">
+
+            <form name="mascota" action="" method="post">
+              {% csrf_token %}
+              <label></label>
+              <label></label>
+              <div class=foto></div>
+              <label></label>
+              <label></label>
+
+              <!--  <label></label>
+    
+              <label class=entrada_form>Mascota</label>
+              <select name="mascota_cl" required>
+                <option value="Mascota1">Mascota1</option>
+                <option value="Mascota2">Mascota2</option>
+              </select>
+      
+             <label></label>-->
+
+              <label class=entrada_form>Nombre</label>
+              <input type="text" name="nombre" placeholder="Nombre..." required>
+
+
+              <label class=entrada_form>Tipo</label>
+              <select name="tipo" required>
+                <option value="Perro">Perro</option>
+                <option value="Gato">Gato</option>
+              </select>
+
+              <label class=entrada_form>Raza</label>
+              <input type="text" name="raza" placeholder="Raza..." required>
+
+              <label class=entrada_form>Edad</label>
+              <input type="text" name="edad" placeholder="Edad..." required>
+
+              <label class=entrada_form>Peso</label>
+              <input type="text" name="peso" placeholder="Peso..." required>
+
+              <label class=entrada_form>Sexo</label>
+              <input type="text" name="sexo" placeholder="Sexo..." required>
+
+              <label></label>
+              <label></label>
+              <label></label>
+
+              <input type="submit" class="bregistro" name="registro_ms" value="Registrar">
+
+
+            </form>
+
+          </div>
+        </div>
+        <div class="col-md-4"> </div>
+
+      </div>
+
+
+      <!--  <script src="script.js"></script>-->
+
+
+
+</body>
+
+</html>

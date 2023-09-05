@@ -1,0 +1,1308 @@
+/*html, body {
+  height: 100%;
+  width: 100%;
+}*/
+
+header {
+  height: 70px;
+  width: 150%;
+  background-color: #90d669;
+  font-size: 50px;
+  padding-left: 30px;
+  border-color: black;
+  border-bottom-style: solid;
+}
+
+body {
+  height: 100%;
+  background-repeat: no-repeat;
+  background: url('background_img.png') no-repeat center center fixed;
+  background-size: 100% 100%;
+  color: white;
+}
+
+article {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  align-content: center;
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+/*article>.ciz,.cce{
+  margin-left: 7px;
+  margin-top: 20px;
+}
+
+article>.cde,.cce{
+  margin-right: 7px;
+  margin-top: 20px;
+}*/
+
+article>.ciz {
+  position: relative;
+  background-color: red;
+  width: 566px;
+  height: 850px;
+  border-style: solid;
+}
+
+article>.cce {
+  width: 688px;
+  height: 832px;
+  border-style: solid;
+}
+
+article>.cde {
+  width: 566px;
+  height: 850px;
+  border-style: solid;
+  position: relative;
+  background-color: red;
+}
+
+/*REGISTRO USUARIO*/
+
+.registro_usuario {
+  position: relative;
+  margin-left: 20px;
+  margin-top: 150px;
+  width: 650px;
+  height: 500px;
+  text-align: center;
+  background-color: #2a7fbf;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 30px;
+  border-color: #000000;
+}
+
+
+/*FORMULARIOS*/
+
+.registro_usuario>form {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  margin-left: 15%;
+  margin-top: 10%;
+  width: 200px;
+  height: 400px;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
+.titulo>p {
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+
+.registro_usuario>form label {
+  text-align: left;
+  width: 150px;
+  height: 30px;
+  font-size: 18px;
+
+}
+
+.registro_usuario>form input {
+
+  width: 300px;
+  height: 30px;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom-color: #5ec6d0;
+  font-size: 18px;
+
+}
+
+.registro_usuario>form select {
+
+  width: 300px;
+  height: 30px;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom-color: #5ec6d0;
+  font-size: 18px;
+
+}
+
+.registro_usuario>form .bregistro {
+
+  width: 300px;
+  height: 30px;
+  background-color: #5ec6d0;
+  font-size: 18px;
+  border-style: none;
+
+}
+
+/*REGISTRO MASCOTA*/
+
+.registro_mascota {
+  position: relative;
+  margin-left: 40px;
+  margin-top: 200px;
+  width: 611px;
+  height: 403px;
+  border-style: solid;
+  background-color: #2a7fbf;
+  border-style: solid;
+  border-width: 4px;
+  border-color: #000000;
+  border-radius: 30px;
+}
+
+.registro_mascota>form {
+  position: absolute;
+  left: 0%;
+  top: -30%;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  margin-left: 35px;
+  margin-top: 150px;
+  width: 306px;
+  height: 351px;
+  text-align: center;
+}
+
+.registro_mascota>form label {
+  text-align: center;
+  width: 125px;
+  height: 30px;
+  font-size: 18px;
+
+}
+
+.registro_mascota>form input {
+
+  width: 115px;
+  height: 30px;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom-color: #5ec6d0;
+  font-size: 18px;
+
+}
+
+.registro_mascota>form select {
+
+  width: 115px;
+  height: 30px;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom-color: #5ec6d0;
+  font-size: 18px;
+
+}
+
+.registro_mascota>form .foto {
+  width: 120px;
+  height: 120px;
+  background-color: white;
+  border-style: solid;
+  border-radius: 90px;
+  border-color: black;
+  border-width: 4px;
+  position: absolute;
+  top: -30%;
+  left: 38%;
+  margin-left: 90px;
+}
+
+article>.entrada_form {
+  text-align: center;
+}
+
+
+/*PERFIL MASCOTAS*/
+.perfil_mascotas {
+  width: 100%;
+  height: 60%;
+  min-height: 650px;
+  margin-top: 75px;
+  margin-left: 0px;
+  background-color: #2a7fbf;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: black;
+  color: white;
+  position: relative;
+}
+
+.perfil_mascotas>.foto {
+  width: 180px;
+  height: 180px;
+  background-color: white;
+  border-style: solid;
+  border-radius: 90px;
+  border-color: black;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  margin-left: -90px;
+}
+
+.perfil_mascotas>.datos {
+  position: absolute;
+  top: 50%;
+  left: 12%;
+  max-height: 36px;
+  line-height: 18px;
+}
+
+.perfil_mascotas>.datos>p {
+  font-size: 24px;
+  top: 70%;
+  margin-bottom: none;
+}
+
+.perfil_mascotas>.Bhistoria button {
+  position: absolute;
+  top: 86%;
+  left: 80%;
+  min-width: 70px;
+  height: 60px;
+  background-color: #5ec6d0;
+}
+
+/*PERFIL PERSONAL*/
+.perfil_personal {
+  width: 97%;
+  height: 100%;
+  min-height: 650px;
+  margin-top: 75px;
+  margin-left: 0px;
+  background-color: #2a7fbf;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: black;
+  color: white;
+  position: relative;
+}
+
+.perfil_personal>.foto {
+  width: 180px;
+  height: 180px;
+  background-color: white;
+  border-style: solid;
+  border-radius: 90px;
+  border-color: black;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  margin-left: -90px;
+}
+
+.perfil_personal>.datos {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  max-height: 36px;
+  line-height: 30px;
+
+}
+
+.perfil_personal>.datos>p {
+  font-size: 24px;
+  top: 70%;
+}
+
+.perfil_personal>.Bhistoria>.b1 {
+  position: absolute;
+  top: 87%;
+  left: 80%;
+  min-width: 90px;
+  text-align: center;
+  border-style: outset;
+  border-width: 1px;
+  min-height: 40px;
+  background-color: #5ec6d0;
+  color: black;
+}
+
+.perfil_personal>.Bhistoria>.b2 {
+  position: absolute;
+  top: 87%;
+  left: 80%;
+  min-width: 79px;
+  min-height: 55px;
+  background-color: #db7369;
+}
+
+/*HISTORIA CLÍNICA*/
+.historia_clinica_c {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+}
+
+.historia_clinica_c>.nombre {
+  width: 70%;
+  height: 55px;
+  border-radius: 30px;
+  text-align: center;
+  position: relative;
+  top: -35%;
+  left: 25%;
+  border-style: solid;
+  border-width: 3px;
+  background-color: white;
+}
+
+.nombre>p {
+  font-size: 24px;
+  position: relative;
+  left: 15%;
+}
+
+.historia_clinica_c>.foto {
+  width: 100px;
+  height: 100px;
+  border-radius: 90px;
+  position: absolute;
+  top: 1%;
+  left: 10%;
+  border-style: solid;
+  border-width: 3px;
+  background-color: white;
+}
+
+.historia_clinica_c>.hc_datos {
+  position: relative;
+  width: 100%;
+  height: 40%;
+  top: 5px;
+  background-color: #5ec6d0;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 30px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  padding-top: 50px;
+}
+
+.hc_datos>p {
+  font-size: 24px;
+}
+
+.hc_datos>.selec_mascota {
+  font-size: 28px;
+}
+
+.historia_clinica_c>.ctabla {
+  position: relative;
+  top: 15%;
+  left: 1%;
+  width: 100%;
+  border-width: 2px;
+}
+
+.pedir_cita>.ctabla {
+  position: absolute;
+  top: 25%;
+  left: 1%;
+  width: 100%;
+  border-width: 2px;
+  overflow: scroll;
+}
+
+.ctabla>.tabla {
+  text-align: center;
+  border-collapse: collapse;
+  color: #000000;
+  background-color: #cccccc;
+  /*max-width: 200px;*/
+  width: 100%;
+}
+
+th,
+td {
+  padding: 10px;
+  font-size: 18px;
+  width: 115px;
+}
+
+tr>th {
+  font-size: 20px;
+}
+
+thead {
+  background-color: #618a4a;
+  color: #000000;
+}
+
+tr:nth-child(even) {
+  background-color: #90d669;
+}
+
+/*PROXIMAS CITAS*/
+.proximas_citas {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(1, 10fr);
+  left: 4%;
+  top: 11%;
+  width: 95%;
+  height: 650px;
+  align-items: center;
+  line-height: 10px;
+
+
+}
+
+.proximas_citas>.info {
+  position: relative;
+  height: 200px;
+  left: 6%;
+  width: 90%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 15px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 11px;
+  color: black;
+  padding-top: 33px;
+  background-color: #dddddd;
+}
+
+.proximas_citas>.info2 {
+  position: relative;
+  height: 200px;
+  left: 6%;
+  width: 90%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 15px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 11px;
+  color: black;
+  padding-top: 33px;
+  background-color: #dddddd;
+}
+
+.proximas_citas>.info>.b1 {
+  height: 15%;
+  left: 87%;
+  top: 70%;
+  background-color: #2a7fbf;
+}
+
+.proximas_citas>.info>form>.BCita>.b1 {
+  position: absolute;
+  top: 70%;
+  left: 85%;
+  min-width: 60px;
+  text-align: center;
+  border-style: outset;
+  border-width: 1px;
+  min-height: 40px;
+  background-color: #5ec6d0;
+  color: black;
+}
+
+.proximas_citas>.info>.cita_cel {
+  height: 15%;
+  background-color: rebeccapurple;
+  left: 87%;
+  top: 70%;
+}
+/*MASCOTAS REGISTRADAS*/
+.mascotas_registradas {
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 5px;
+  display: grid;
+  grid-template-columns: repeat(1, 10fr);
+  width: 95%;
+  height: 700px;
+  align-items: center;
+  line-height: 10px;
+  color: white;
+}
+
+.mascotas_registradas>.info_mas {
+  position: relative;
+  height: 180px;
+  top: 15%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 15px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 9px;
+  background-color: #2a7fbf;
+}
+
+.info_mas>.texto_m {
+  position: absolute;
+  top: 27%;
+  left: 32%;
+  font-size: 25px;
+  line-height: 18px;
+
+}
+
+.info_mas>.texto {
+  position: absolute;
+  top: 15%;
+  left: 32%;
+  font-size: 25px;
+  line-height: 18px;
+
+}
+
+.info_mas>.Bhistoria>.b1 {
+  position: absolute;
+  top: 70%;
+  left: 80%;
+  min-width: 40px;
+  min-height: 40px;
+  background-color: #5ec6d0;
+}
+
+.b1>.b11 {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  min-width: 40px;
+  min-height: 40px;
+  background-color: #5ec6d0;
+}
+
+.info_mas>.Bhistoria>.b2 {
+  position: absolute;
+  top: 70%;
+  left: 90%;
+  min-width: 40px;
+  min-height: 40px;
+  background-color: #db7369;
+}
+
+.mascotas_registradas>.info_mas>.Bhistoria>.b3 {
+  position: relative;
+  top: 30%;
+  left: 17%;
+  min-width: 79px;
+  min-height: 45px;
+  background-color: #5ec6d0;
+}
+
+.mascotas_registradas>.info_mas>.Bhistoria>.b4 {
+  position: relative;
+  top: 30%;
+  left: 18%;
+  min-width: 79px;
+  min-height: 45px;
+  background-color: #db7369;
+}
+
+.mascotas_registradas>.info_mas>.Bhistoria>.b5 {
+  position: relative;
+  top: 30%;
+  left: 17%;
+  min-width: 79px;
+  min-height: 45px;
+  background-color: #5ec6d0;
+}
+
+.mascotas_registradas>.info_mas>.Bhistoria>.b6 {
+  position: relative;
+  top: 30%;
+  left: 18%;
+  min-width: 79px;
+  min-height: 45px;
+  background-color: #db7369;
+}
+
+/*PROXIMAS CITAS MEDICO*/
+.proximas_citas_M {
+  position: relative;
+  width: 100%;
+  height: 832px;
+  top: 5px;
+}
+
+.proximas_citas_M>.info {
+  /*position: absolute;
+  top: 10%;
+  left: 5%;*/
+  width: 100%;
+  height: 270px;
+  top: 30%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 15px;
+  border-style: solid;
+  border-color: black;
+  background-color: #dddddd;
+}
+
+.proximas_citas_M>.info2 {
+  /*position: absolute;
+  top: 46%;
+  left: 5%;*/
+  width: 100%;
+  height: 270px;
+  text-align: center;
+  font-size: 28px;
+  line-height: 15px;
+  border-style: solid;
+  border-color: black;
+  background-color: #dddddd;
+}
+
+.proximas_citas_M>.BCita button {
+  position: absolute;
+  top: 36%;
+  left: 78%;
+  min-width: 50px;
+  height: 30px;
+  line-height: 15px;
+  background-color: #5ec6d0;
+}
+
+/*BOTONES CLIENTE*/
+.botones_cliente {
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  background-color: #dddddd;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: black;
+  color: black;
+  position: relative;
+  top: 5px;
+}
+
+.botones_cliente>.BPC button {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  height: 175px;
+  width: 80%;
+  background-color: #5ec6d0;
+  font-size: 36px;
+}
+
+.botones_cliente>.BHC button {
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  width: 80%;
+  height: 175px;
+  background-color: #5ec6d0;
+  font-size: 36px;
+}
+
+/*CITA ACTUAL*/
+.cita_actual {
+  width: 550px;
+  height: 653px;
+  margin-top: 73px;
+  margin-left: 35px;
+  background-color: #dddddd;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: black;
+  color: black;
+  position: absolute;
+}
+
+.cita_actual>form .datos {
+  position: absolute;
+  top: 30px;
+  left: 7%;
+  max-height: 36px;
+  line-height: 15px;
+  font-weight: bolder;
+  
+}
+
+.datos>p {
+  font-size: 30px;
+}
+
+.cita_actual>.Bhistoria>.b1 {
+  position: absolute;
+  top: 87%;
+  left: 77%;
+  min-width: 90px;
+  text-align: center;
+  border-style: outset;
+  border-width: 1px;
+  min-height: 40px;
+  background-color: #db7369;
+  color: black;
+  padding-top: 5px;
+}
+
+.cita_actual>.Bhistoria>.b2 {
+  position: absolute;
+  top: 87%;
+  left: 7%;
+  min-width: 110px;
+  text-align: center;
+  border-style: outset;
+  border-width: 1px;
+  min-height: 40px;
+  background-color: #90d669;
+  color: black;
+  padding-top: 5px;
+}
+
+.cita_actual>form>.Bhistoria>.b3 {
+  position: absolute;
+  top: 87%;
+  left: 50%;
+  min-width: 90px;
+  text-align: center;
+  border-style: outset;
+  border-width: 1px;
+  min-height: 40px;
+  background-color: #5ec6d0;
+  color: black;
+}
+
+.cita_actual>.Btn_cita_A {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  min-width: 79px;
+  height: 40px;
+  background-color: #90d669;
+}
+
+.cita_actual>form .Btn_cita_B  {
+  position: absolute;
+  top: 90%;
+  left: 30%;
+  min-width: 79px;
+  height: 40px;
+  
+}
+
+.cita_actual>form .Btn_cita_C  {
+  position: absolute;
+  top: 90%;
+  left: 80%;
+  min-width: 79px;
+  height: 40px;
+  
+}
+
+.cita_actual>form .descripcion_cita {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  min-width: 485px;
+  height: 154px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+}
+
+.cita_actual>form .tratamiento_cita {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  min-width: 485px;
+  height: 154px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+}
+
+/*AGENDAR CITA*/
+.agendar_cita {
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  margin-top: 75px;
+  margin-left: 0px;
+  background-color: #dddddd;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: black;
+  color: black;
+  position: relative;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.agendar_cita>.datos {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  max-height: 36px;
+  line-height: 15px;
+}
+
+.tipo_cita>p {
+  font-size: 18px;
+}
+
+.hora_fecha>p {
+  font-size: 18px;
+
+}
+
+.historia_clinica_c>p {
+  font-size: 18px;
+}
+
+.agendar_cita>.Btn_cita_A {
+  position: absolute;
+  top: 85%;
+  left: 41%;
+  min-width: 79px;
+  height: 40px;
+  }
+
+
+.agendar_cita>.Btn_cita_B button {
+  position: absolute;
+  top: 90%;
+  left: 77%;
+  min-width: 79px;
+  height: 40px;
+  background-color: #db7369;
+}
+
+.agendar_cita>.tipo_cita {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 104px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+  background-color: #90d669;
+  text-align: center;
+}
+
+.agendar_cita>.fecha_hora {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 90%;
+  height: 170px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+  background-color: #90d669;
+  text-align: center;
+  padding-top: 33px;
+}
+
+
+.agendar_cita>.comentarios_cita {
+  position: absolute;
+  top: 55%;
+  left: 5%;
+  width: 90%;
+  height: 154px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+}
+
+textarea {
+  height: 148px;
+  width: 100%;
+  resize: none;
+  line-height: 1.5;
+  border-radius: 10px;
+}
+
+/*HISTORIA CLÍNICA_ACTUAL*/
+.historia_clinica_act {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  top: 5px;
+  left: 0%;
+}
+
+.historia_clinica_act>.hc_datos {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 24%;
+  background-color: #5ec6d0;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 30px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  padding-top: 50px;
+}
+
+.hc_datos>p {
+  font-size: 24px;
+}
+
+.hc_datos>.selec_mascota {
+  font-size: 28px;
+}
+
+.historia_clinica_act>.ctabla {
+  position: absolute;
+  top: 25%;
+  left: 0%;
+  width: 100%;
+  min-height: 480px;
+  overflow: scroll;
+}
+
+.ctabla>.tabla {
+  text-align: center;
+  border-collapse: collapse;
+  color: #000000;
+  background-color: #cccccc;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 10px;
+  font-size: 18px;
+  width: 10%;
+}
+
+tr>th {
+  font-size: 20px;
+}
+
+thead {
+  background-color: #618a4a;
+  color: #000000;
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: #90d669;
+}
+
+/*PEDIR CITA*/
+.pedir_cita {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+  height: 100%;
+  top: 75px;
+  left: 20px;
+  min-height: 653px;
+  background-color: #dddddd;
+  border-style: solid;
+  border-radius: 12px;
+  border-color: black;
+  color: black;
+  position: relative;
+}
+
+.pedir_cita>.datos {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  max-height: 36px;
+  line-height: 15px;
+}
+
+.tipo_cita>p {
+  font-size: 18px;
+
+}
+
+.mascota_cita>p {
+  font-size: 18px;
+}
+
+.hora_fecha>p {
+  font-size: 18px;
+}
+
+.historia_clinica_c>p {
+  font-size: 18px;
+}
+
+
+.pedir_cita>.Btn_cita_A button {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  min-width: 79px;
+  height: 40px;
+  background-color: #90d669;
+}
+
+.pedir_cita>.Btn_cita_B button {
+  position: absolute;
+  top: 90%;
+  left: 75%;
+  min-width: 79px;
+  height: 40px;
+  background-color: #db7369;
+}
+
+.pedir_cita>.info_cita {
+  position: relative;
+  top: 32px;
+  left: 5%;
+  width: 90%;
+  height: 150px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+  background-color: #90d669;
+  padding-top: 33px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.info_cita>p {
+  font-weight: bold;
+}
+
+.pedir_cita>.tipo_cita {
+  left: 5%;
+  width: 100%;
+  height: 104px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+  background-color: #90d669;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.pedir_cita>.mascota_cita {
+  left: 5%;
+  width: 100%;
+  height: 104px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+  background-color: #90d669;
+  text-align: center;
+}
+
+.pedir_cita>.fecha_hora {
+  position: absolute;
+  top: 42%;
+  left: 5%;
+  width: 90%;
+  height: 104px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+  background-color: #90d669;
+  text-align: center;
+}
+
+
+.pedir_cita>.comentarios_cita {
+  position: absolute;
+  top: 62%;
+  left: 5%;
+  width: 90%;
+  height: 154px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+}
+
+textarea {
+  height: 148px;
+  width: 100%;
+  resize: none;
+  line-height: 1.5;
+  border-radius: 10px;
+}
+
+/*MODIFICAR MASCOTA*/
+
+.modificar_mascota {
+  position: relative;
+  margin-left: 40px;
+  margin-top: 200px;
+  width: 611px;
+  height: 403px;
+  border-style: solid;
+  background-color: #2a7fbf;
+}
+
+.modificar_mascota>form {
+  position: absolute;
+  left: 0%;
+  top: -30%;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  margin-left: 60px;
+  margin-top: 150px;
+  width: 306px;
+  height: 351px;
+  text-align: center;
+}
+
+.modificar_mascota>form label {
+  text-align: center;
+  width: 125px;
+  height: 30px;
+  font-size: 18px;
+
+}
+
+.modificar_mascota>form input {
+
+  width: 100px;
+  height: 30px;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom-color: #5ec6d0;
+  font-size: 18px;
+
+}
+
+.modificar_mascota>form select {
+
+  width: 100px;
+  height: 30px;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom-color: #5ec6d0;
+  font-size: 18px;
+
+}
+
+.modificar_mascota>form .foto {
+  width: 120px;
+  height: 120px;
+  background-color: white;
+  border-style: solid;
+  border-radius: 90px;
+  border-color: black;
+  position: absolute;
+  top: -30%;
+  left: 30%;
+  margin-left: 90px;
+}
+
+article>.entrada_form {
+  text-align: center;
+}
+
+
+/*HISTORIA CLINICA DETALLADA*/
+.historia_detallada {
+  width: 100%;
+  height: 100%;
+  top: 5px;
+  background-color: #dddddd;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: black;
+  color: black;
+  position: relative;
+}
+
+.historia_detallada>.datos {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  max-height: 36px;
+  line-height: 15px;
+}
+
+.datos>p {
+  font-size: 28px;
+}
+
+.historia_detallada>.descripcion_cita {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  width: 90%;
+  height: 154px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+}
+
+.historia_detallada>.tratamiento_cita {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 90%;
+  height: 154px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+}
+
+/*LOGIN*/
+
+.login {
+  align-items: center;
+  width: 420px;
+  height: 400px;
+  margin-top: 90px;
+  margin-left: 150px;
+  border-style: solid;
+  background-color: #2a7fbf;
+  border-style: solid;
+  border-width: 4px;
+  border-color: #000000;
+  border-radius: 30px;
+
+}
+
+.login>form {
+  position: absolute;
+  margin-left: 50px;
+  margin-top: 0px;
+  width: 306px;
+  height: 351px;
+  text-align: center;
+}
+
+.login a {
+  color: black;
+  margin-left: 10px;
+  font-weight: bold;
+
+}
+
+.login input {
+  width: 70%;
+  margin: 1rem;
+}
+
+.login select {
+  width: 70%;
+  margin: 1rem;
+}
+
+h3 {
+  font-size: 40px;
+  top: 20;
+}

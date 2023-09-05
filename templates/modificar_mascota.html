@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+  {% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>VetUD</title>
+<!--<link rel="stylesheet" type="text/css" href='{% static "app/styleboostrap.css" %}'>-->
+  <!--<link rel="stylesheet" type="text/css" href='{% static "app/style.css" %}'>-->
+  <link href='{% static "app/styleboostrap.css" %}' rel="stylesheet">
+  <link href='{% static "app/style.css" %}' rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+          <a href="" class="navbar-brand d-block d-lg-none">
+              <h1 class="m-0 display-5 text-capitalize text-white"><span class="text-primary">Vet</span>UD</h1>
+          </a>
+          <div class="col-lg-2">
+              <a href="" class="navbar-brand d-none d-lg-block">
+                  <h1 class="m-0 display-5 text-capitalize text-white"><span class="text-primary">Vet</span>UD</h1>
+              </a>
+          </div>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-between px-3 " id="navbarCollapse">
+              <div class="navbar-nav mr-auto py-0">
+                  <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                  <a href="#about" class="nav-item nav-link">About</a>
+                  <a href="#service" class="nav-item nav-link">Servicios</a>
+                  <a href="#price" class="nav-item nav-link">Precios</a>
+                  <a href="contact.html" class="nav-item nav-link">Contact</a>
+              </div>
+
+          </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+    </div>
+  <div class="row">
+    <div class="col-md-4">
+      <!-- inicio panel izqierdo -->
+                <!--MASCOTAS REGISTRADAS -->
+                <div class= "mascotas_registradas">
+                  <!--<div class = "info">
+                    <p>Fecha:</p>
+                  </div>-->
+                  <div class = "info_mas">
+                    <p>Nombre: MascotaA</p>
+                    <p>Tipo: Perro</p>
+                    <p>Raza: RazaA</p>
+                    <div class= "Bhistoria">
+                      <button class = b1>A</button>
+                      <button class = b2>B</button>
+                    </div>
+                  </div>
+                  
+                  <div class="info_mas">
+                    <p>Nombre: MascotaA</p>
+                    <p>Tipo: Perro</p>
+                    <p>Raza: RazaA</p>
+                    <div class= "Bhistoria">
+                      <button class = b3>A</button>
+                      <button class = b4>B</button>
+                    </div>
+                  </div>
+                  
+                  <div class="info_mas">
+                    <p>Nombre: MascotaA</p>
+                    <p>Tipo: Perro</p>
+                    <p>Raza: RazaA</p>
+                    <div class= "Bhistoria">
+                      <button class = b5>A</button>
+                      <button class = b6>B</button>
+                    </div>
+                  </div>
+              </div>
+      <!-- fin panel izqierdo -->
+    </div>
+    <div class="col-md-4">
+      <!-- inicio panel central -->
+      <div class=modificar_mascota>
+
+        <form name="mascota" action="" method="post">
+  
+          <label ></label>
+          <label ></label>
+          <div class=foto></div>
+          <label ></label>
+          <label ></label>
+  
+          <label ></label>
+          
+          <label class=entrada_form>Mascota</label>
+            <select name="mascota_cl" required>
+              <option value="Mascota1">Mascota1</option>
+              <option value="Mascota2">Mascota2</option>
+            </select>
+          
+          <label ></label>
+                    
+          <label class=entrada_form>Nombre</label>
+          <input type="text" id="nombre" placeholder="Nombre..." required>
+  
+  
+          <label class=entrada_form>Tipo</label>
+            <select name="tipo" required>
+            <option value="Perro">Perro</option>
+            <option value="Gato">Gato</option>
+          </select>
+  
+          <label class=entrada_form>Raza</label>
+          <input type="text" id="raza" placeholder="Raza..." required>
+  
+          <label class=entrada_form>Edad</label>
+          <input type="text" id="edad" placeholder="Edad..." required>
+  
+          <label class=entrada_form>Peso</label>
+          <input type="text" id="peso" placeholder="Peso..." required>
+  
+          <label class=entrada_form>Sexo</label>
+          <input type="text" id="sexo" placeholder="Sexo..." required>
+  
+          
+        </form>
+  
+      </div>
+      <!-- fin panel central -->
+    </div>
+    <div class="col-md-4">
+      <!-- inicio panel derecho -->
+      <div class= "proximas_citas">
+        <!--PRÓXIMAS CITAS -->
+        <!--<div class = "info">
+          <p>Fecha:</p>
+        </div>-->
+        <div class = "info">
+          <p>Fecha: 30 de Noviembre del 2022</p>
+          <p>Hora: 15:00</p>
+          <p>Paciente: MascotaA</p>
+          <p>Tipo: Veterinario</p>
+        </div>
+        
+        <div class="info">
+          <p>Fecha: 14 de Diciembre del 2022</p>
+          <p>Hora: 18:00</p>
+          <p>Paciente: MascotaB</p>
+          <p>Tipo: Estetico</p>
+        </div>
+        
+        <div class="info">
+          <p>Fecha: 20 de Febrero del 2023</p>
+          <p>Hora: 12:00</p>
+          <p>Paciente: MascotaC</p>
+          <p>Tipo: Veterinario</p>
+        </div>
+
+        <div class="info">
+          <p>Fecha: 24 de Febrero del 2023</p>
+          <p>Hora: 12:00</p>
+          <p>Paciente: MascotaD</p>
+          <p>Tipo: Veterinario</p>
+        </div>
+        
+      </div>
+      <!-- inicio panel derecho -->
+    </div>
+  </div>
+  </div>
+
+
+      
+      
+ <!--<script src="script.js"></script>--> 
+
+
+
+</body>
+
+</html>

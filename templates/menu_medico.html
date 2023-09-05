@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+  {% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>VetUD</title>
+<!--<link rel="stylesheet" type="text/css" href='{% static "app/styleboostrap.css" %}'>-->
+  <!--<link rel="stylesheet" type="text/css" href='{% static "app/style.css" %}'>-->
+  <link href='{% static "app/styleboostrap.css" %}' rel="stylesheet">
+  <link href='{% static "app/style.css" %}' rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+          <a href="" class="navbar-brand d-block d-lg-none">
+              <h1 class="m-0 display-5 text-capitalize text-white"><span class="text-primary">Vet</span>UD</h1>
+          </a>
+          <div class="col-lg-2">
+              <a href="" class="navbar-brand d-none d-lg-block">
+                  <h1 class="m-0 display-5 text-capitalize text-white"><span class="text-primary">Vet</span>UD</h1>
+              </a>
+          </div>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-between px-3 " id="navbarCollapse">
+              <div class="navbar-nav mr-auto py-0">
+                  <a href="{% url 'agendar_cita' %}" class="nav-item nav-link">Programar Citas</a>
+                  <a href="{% url 'historia_clinica_act' %}" class="nav-item nav-link">Historias Clinicas</a>
+                  <a href="{% url 'login' %}" class="nav-item nav-link">Cerrar Sesión</a>
+              </div>
+
+          </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+    </div>
+  <div class="row">
+    <div class="col-md-4">
+      <!-- inicio panel izqierdo -->
+          <!--MASCOTAS REGISTRADAS -->
+      <div class= "mascotas_registradas">
+        {% for mascota in mascotas %}
+        <div class="info_mas">
+
+
+          <div class="texto">
+            <p>Nombre: {{mascota.nombre_mascota}}</p>
+            <p>Tipo: {{mascota.tipo_mascota}}</p>
+            <p>Raza: {{mascota.raza_mascota}}</p>
+            {% for cliente in clientes %}
+            {% if cliente == mascota.id_cliente %}
+            <p>Dueño: {{ cliente.nombre_cliente }}</p>
+            {% endif %}
+            {% endfor %}
+          </div>
+          
+        
+        </div>
+        {% endfor %}     
+    </div>
+      <!-- fin panel izqierdo -->
+    </div>
+    <div class="col-md-4">
+      <!-- inicio panel central -->
+        <!-- PROXIMAS CITAS -->
+        <div class="proximas_citas">
+          <!--<div class = "info">
+          <p>Fecha:</p>
+        </div>-->
+          {%for cita in citas%}
+
+
+          {% for mascota in mascotas %}
+          {% if mascota == cita.id_mascota %}
+          <div class="info">
+            <form method="POST">
+            <p>Fecha: {{ cita.fecha_inicio }}</p>
+            <input type="hidden" name="cita" value="{{ cita.id_cita }}">
+            <p>Paciente: {{ mascota.nombre_mascota }}</p>
+
+            {% for empleado in empleados %}
+            {% if empleado == cita.id_empleado %}
+            <p>Profesional: {{ empleado.nombre_emp }}</p>
+            {% for perfil in perfiles %}
+            {% if perfil == empleado.id_perfil %}
+            <p>Tipo: {{ perfil.nombre_perfil }}</p>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+            <div class="BCita">
+              <input class="b1" type="submit" name="cita_sel" value="SC">
+            </div>
+          </form>
+          </div>
+          
+          {% endif %}
+          {% endfor %}
+        
+          {% endfor %}
+
+        </div>
+      <!-- fin panel central -->
+    </div>
+    <div class="col-md-4">
+      <!-- inicio panel derecho -->
+      <div class=cde>
+        <!-- PERFIL PERSONAL -->
+        {%for empleado in empleados %}
+        <div class="perfil_personal">
+          <div class = "foto"> </div>
+          <div class = "datos">
+            <p>NOMBRE: {{ empleado.nombre_emp }}</p>
+            <p>DIRECCIÓN: {{ empleado.direccion_emp }}</p>
+            <p>TELÉFONO: {{ empleado.telefono_emp }}</p>
+            <p>CORREO: {{ empleado.correo_emp }}</p>
+            {% for perfil in perfiles %}
+            {% if perfil == empleado.id_perfil %}
+            <p>PROFESIÓN: {{ perfil.nombre_perfil }}</p>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+          </div>
+          <div class= "Bhistoria">
+            <a class="b1" href="{% url 'reg_emp' %}" target="_self" style="text-decoration:none">Registrar<br>Empleado</a>
+          </div>
+        </div>
+    
+  </div>
+      <!-- inicio panel derecho -->
+    </div>
+  </div>
+
+
+    
+  </div>
+ <!--<script src="script.js"></script>--> 
+</body>
+
+</html>

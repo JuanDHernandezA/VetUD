@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>VetUD</title>
+  <!--<link rel="stylesheet" type="text/css" href='{% static "app/styleboostrap.css" %}'>-->
+  <!--<link rel="stylesheet" type="text/css" href='{% static "app/style.css" %}'>-->
+  <link href='{% static "app/styleboostrap.css" %}' rel="stylesheet">
+  <link href='{% static "app/style.css" %}' rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Navbar Start -->
+      <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+          <a href="" class="navbar-brand d-block d-lg-none">
+            <h1 class="m-0 display-5 text-capitalize text-white"><span class="text-primary">Vet</span>UD</h1>
+          </a>
+          <div class="col-lg-2">
+            <a href="" class="navbar-brand d-none d-lg-block">
+              <h1 class="m-0 display-5 text-capitalize text-white"><span class="text-primary">Vet</span>UD</h1>
+            </a>
+          </div>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-between px-3 " id="navbarCollapse">
+            <div class="navbar-nav mr-auto py-0">
+              <a href="{% url 'reg_mas' %}" class="nav-item nav-link">Registrar Mascota</a>
+              <a href="{% url 'historia_clinica' %}" class="nav-item nav-link">Historias Clinicas</a>
+              <a href="{% url 'login' %}" class="nav-item nav-link">Cerrar Sesión</a>
+            </div>
+
+          </div>
+        </nav>
+      </div>
+      <!-- Navbar End -->
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <!-- inicio panel izqierdo -->
+        <!--MASCOTAS REGISTRADAS -->
+        <div class="mascotas_registradas">
+          <!--<div class = "info">
+          <p>Fecha:</p>
+        </div>-->
+          {% for mascota in mascotas %}
+          <div class="info_mas">
+
+
+            <div class="texto_m">
+              <p>Nombre: {{mascota.nombre_mascota}}</p>
+              <p>Tipo: {{mascota.tipo_mascota}}</p>
+              <p>Raza: {{mascota.raza_mascota}}</p>
+            </div>
+            
+          </div>
+          {% endfor %}
+
+
+        </div>
+        <!-- fin panel izqierdo -->
+      </div>
+      <div class="col-md-4">
+        <!-- inicio panel central -->
+        <!-- PEDIR CITA -->
+        <div class=pedir_cita>
+
+          <div class="info_cita">
+            <p>Tipo Cita</p>
+            <input type="radio" id="medico" name="tipo_cita" value="medico" checked>
+            <label for="medico">Medico</label>
+
+            <input type="radio" id="estilista" name="tipo_cita" value="estilista">
+            <label for="estilista">Estilista</label>
+          </div>
+
+          <div class="info_cita">
+            <form method="POST">
+              <p>Mascota Seleccionada</p>
+              <select name="masc_cita">
+                <option value="ninguna">--Seleccione Mascota--</option>
+                {% for mascota in mascotas %}
+                <option value='{{mascota.nombre_mascota}}'>{{mascota.nombre_mascota}}</option>
+                {% endfor %}
+              </select>
+
+          </div>
+
+          <div class="info_cita">
+
+            <p>Citas Disponibles</p>
+            <select name="citas_dis">
+              <option value="ninguna" selected>--Seleccione una Cita--</option>
+              {% for cita in citas %}
+              <option value='{{cita.id_cita}}'>
+                {{cita.fecha_inicio}}
+
+                {% for empleado in empleados %}
+                {% for perfil in perfiles %}
+                {% if cita.id_empleado == empleado %}
+                {% if empleado.id_perfil == perfil %}
+                {{empleado.nombre_emp}}
+                {{perfil.nombre_perfil}}
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+
+
+                {% endfor %}
+              </option>
+            </select>
+            <input type="submit" name="cita_sel" value="Pedir Cita">
+          </div>
+
+
+
+
+          <!--
+          <div class="fecha_hora">
+            <p>Hora y fecha Cita</p>
+            <label for="fecha">Fecha: </label>
+            <input type="date" id="fecha" name="fecha" value="2023-01-01" min="2023-01-01" max="2023-12-31">
+
+            <label for="hora">Hora: </label>
+            <input type="time" id="hora" name="hora" value="9:00:00" min="9:00:00" max="15:00:00">
+
+          </div>
+
+          <div class="comentarios_cita">
+          <textarea name="comentarios" placeholder="comentario..."></textarea>
+          </div>
+
+          <div class="Btn_cita_A">
+            <button>Pedir cita</button>
+          </div>
+
+          <div class="Btn_cita_B">
+            <button>Cancelar</button>
+          </div>-->
+
+
+
+
+
+          </form>
+
+        </div>
+
+        <!-- fin panel central -->
+      </div>
+      <div class="col-md-4">
+        <!-- inicio panel derecho -->
+        <!--PRÓXIMAS CITAS -->
+        <div class="proximas_citas">
+          <!--<div class = "info">
+          <p>Fecha:</p>
+        </div>-->
+          {%for cita in citas_p%}
+
+
+          {% for mascota in mascotas %}
+          {% if mascota == cita.id_mascota %}
+          <div class="info">
+            <p>Fecha: {{ cita.fecha_inicio }}</p>
+            <p>Paciente: {{ mascota.nombre_mascota }}</p>
+
+            {% for empleado in empleados %}
+            {% if empleado == cita.id_empleado %}
+            <p>Profesional: {{ empleado.nombre_emp }}</p>
+            {% for perfil in perfiles %}
+            {% if perfil == empleado.id_perfil %}
+            <p>Tipo: {{ perfil.nombre_perfil }}</p>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+          </div>
+          {% endif %}
+          {% endfor %}
+
+
+          {% endfor %}
+
+        </div>
+
+        <!-- inicio panel derecho -->
+      </div>
+    </div>
+  </div>
+
+
+  <!--<script src="script.js"></script>-->
+
+
+
+</body>
+
+</html>

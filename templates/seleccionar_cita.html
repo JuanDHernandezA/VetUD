@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>VetUD</title>
+  <!--<link rel="stylesheet" type="text/css" href='{% static "app/styleboostrap.css" %}'>-->
+  <!--<link rel="stylesheet" type="text/css" href='{% static "app/style.css" %}'>-->
+  <link href='{% static "app/styleboostrap.css" %}' rel="stylesheet">
+  <link href='{% static "app/style.css" %}' rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Navbar Start -->
+      <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+          <a href="" class="navbar-brand d-block d-lg-none">
+            <h1 class="m-0 display-5 text-capitalize text-white"><span class="text-primary">Vet</span>UD</h1>
+          </a>
+          <div class="col-lg-2">
+            <a href="" class="navbar-brand d-none d-lg-block">
+              <h1 class="m-0 display-5 text-capitalize text-white"><span class="text-primary">Vet</span>UD</h1>
+            </a>
+          </div>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-between px-3 " id="navbarCollapse">
+            <div class="navbar-nav mr-auto py-0">
+              <a href="{% url 'login' %}" class="nav-item nav-link">Cerrar Sesión</a>
+            </div>
+
+          </div>
+        </nav>
+      </div>
+      <!-- Navbar End -->
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <!-- inicio panel izqierdo -->
+        <!-- PERFIL MASCOTAS-->
+        <div class="mascotas_registradas">
+          {% for mascota in mascotas %}
+          <div class="info_mas">
+
+
+            <div class="texto">
+              <p>Nombre: {{mascota.nombre_mascota}}</p>
+              <p>Tipo: {{mascota.tipo_mascota}}</p>
+              <p>Raza: {{mascota.raza_mascota}}</p>
+              {% for cliente in clientes %}
+              {% if cliente == mascota.id_cliente %}
+              <p>Dueño: {{ cliente.nombre_cliente }}</p>
+              {% endif %}
+              {% endfor %}
+            </div>
+
+
+          </div>
+          {% endfor %}
+        </div>
+        <!-- fin panel izqierdo -->
+      </div>
+
+      <div class="col-md-4">
+        <!-- inicio panel derecho -->
+        <!-- CITA ACTUAL -->
+
+
+        <div class=cita_actual>
+          <form method="POST">
+            <div class="datos">
+              <p>Fecha: {{ cita.fecha_inicio }}</p>
+              {% for mascota in mascotas %}
+              {% if mascota == cita.id_mascota %}
+              <p>Paciente: {{ mascota.nombre_mascota }}</p>
+              {% endif %}
+              {% endfor %}
+            </div>
+
+            <input type="hidden" name="cita" value="{{ cita.id_cita }}">
+
+            <div class="descripcion_cita">
+              <textarea name="descripcion" placeholder="descripcion..."></textarea>
+
+            </div>
+
+            <div class="tratamiento_cita">
+              <textarea name="tratamiento" placeholder="tratamiento..."></textarea>
+
+            </div>
+
+
+            <div class="Bhistoria">
+              <input class="b3" type="submit" name="crear_historia" value="Generar Historia">
+            </div>
+
+          </form>
+          <div class="Bhistoria">
+            <a class="b1" href="{% url 'menu_medico' %}" style="text-decoration:none" target="_self">Cancelar</a>
+          </div>
+
+          <div class="Bhistoria">
+            <a class="b2" href="{% url 'pedir_cita_medico' %}" style="text-decoration:none"target="_self">Agendar Cita</a>
+          </div>
+
+        </div>
+        <!-- inicio panel derecho -->
+      </div>
+      <div class="col-md-4">
+        <!-- inicio panel central -->
+        <!-- PERFIL PERSONAL -->
+        <div class=cde>
+          <!-- PERFIL PERSONAL -->
+          {%for empleado in empleados %}
+          <div class="perfil_personal">
+            <div class="foto"> </div>
+            <div class="datos">
+              <p>NOMBRE: {{ empleado.nombre_emp }}</p>
+              <p>DIRECCIÓN: {{ empleado.direccion_emp }}</p>
+              <p>TELÉFONO: {{ empleado.telefono_emp }}</p>
+              <p>CORREO: {{ empleado.correo_emp }}</p>
+              {% for perfil in perfiles %}
+              {% if perfil == empleado.id_perfil %}
+              <p>PROFESIÓN: {{ perfil.nombre_perfil }}</p>
+              {% endif %}
+              {% endfor %}
+              {% endfor %}
+            </div>
+          </div>
+
+        </div>
+        <!-- fin panel central -->
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--<script src="script.js"></script>-->
+
+
+
+</body>
+
+</html>

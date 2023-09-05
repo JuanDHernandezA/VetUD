@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>VetUD</title>
+ <!--<link rel="stylesheet" type="text/css" href='{% static "app/styleboostrap.css" %}'>-->
+  <!--<link rel="stylesheet" type="text/css" href='{% static "app/style.css" %}'>-->
+  <link href='{% static "app/styleboostrap.css" %}' rel="stylesheet">
+  <link href='{% static "app/style.css" %}' rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+          <a href="" class="navbar-brand d-block d-lg-none">
+              <h1 class="m-0 display-5 text-capitalize text-white"><span class="text-primary">Vet</span>UD</h1>
+          </a>
+          <div class="col-lg-2">
+              <a href="" class="navbar-brand d-none d-lg-block">
+                  <h1 class="m-0 display-5 text-capitalize text-white"><span class="text-primary">Vet</span>UD</h1>
+              </a>
+          </div>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-between px-3 " id="navbarCollapse">
+              <div class="navbar-nav mr-auto py-0">
+                  <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                  <a href="{% url 'menu_medico' %}" class="nav-item nav-link">Regresar</a>
+              </div>
+
+          </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <br>
+          <div class="titulo">
+            <p>Empleado</p>
+          </div>
+          
+        </div>
+        <div class="col-md-4">
+          
+          <div class=registro_usuario>
+
+
+              <form name = "empleado" action="" method="post" content='text/html; charset=UTF-8'>
+
+                
+              <label class=entrada_form>Nombre</label>
+              <input type="text" name="nombre" placeholder="Nombre..." required>
+
+                <label class=entrada_form>Dirección</label>
+              <input type="text" name="direccion" placeholder="Dirección..." required>
+
+                <label class=entrada_form>Teléfono</label>
+              <input type="text" name="telefono" placeholder="Teléfono..." required>
+
+                <label class=entrada_form>Correo</label>
+              <input type="text" name="correo" placeholder="Correo..." required>
+
+                
+                <label class=entrada_form>Profesion</label>
+                <select name="profesion" required>
+                  <option value="Veterinario">Veterinario</option>
+                  <option value="Estilista">Estilista</option>  
+                </select>
+
+                <label class=entrada_form>Contraseña</label>
+              <input type="password" name="contraseña" placeholder="Contraseña..." required>
+
+                <label class=entrada_form>Confirmación</label>
+              <input type="password" name="confirmacion" placeholder="Confirmación..." required>
+
+                
+              <label></label>
+
+              <input type="submit" class="bregistro" name="registro_us" value="Registrarse">
+
+
+
+              </form>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+  
+  <!--  <script src="script.js"></script>-->
+
+
+
+</body>
+
+</html>
